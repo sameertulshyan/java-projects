@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class TestDrive {
 	public static void main(String[] args) { 
-		Scanner keyboard = new Scanner(System.in); //create a Scanner object to get user input 
 		
 		Moped moped1 = new Moped(); //create a Moped object for the user to drive
 		System.out.println("Welcome to the moped. Current location is Dr. Rossinsky DDS' office at 10th St and 5th Ave."); //display a welcome message
@@ -16,9 +15,10 @@ public class TestDrive {
 		//create a loop to repeatedly get user input until one of the moped methods exits the program
 		while (true) { //note that the loop is infinite because there are break conditions built into the object methods
 			
+			Scanner keyboard = new Scanner(System.in); //create a Scanner object to get user input 
 			System.out.print("Enter a command, or 'help' for assistance: "); //prompt the user for input
 			String command = keyboard.nextLine().toLowerCase(); //get the input, ignoring the case
-			
+			keyboard.close();
 			//validate the input and call the appropriate method
 			if (command.equals("go left")) {
 				moped1.goLeft();
