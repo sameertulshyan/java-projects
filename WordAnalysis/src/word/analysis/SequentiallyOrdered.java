@@ -1,4 +1,4 @@
-package edu.nyu.cs.st2851.assignment7;
+package word.analysis;
 import java.util.ArrayList;
 /**
  * An interface for all classes that are sequentially ordered- will be implemented by Sentence and Word classes

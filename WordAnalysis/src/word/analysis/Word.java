@@ -1,4 +1,4 @@
-package edu.nyu.cs.st2851.assignment7;
+package word.analysis;
 import java.util.ArrayList;
 /**
  * This class represents words in a language, implementing the SequentiallyOrdered interface and inheriting from the OrderedThing class

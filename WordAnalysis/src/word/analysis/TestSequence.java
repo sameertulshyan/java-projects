@@ -1,4 +1,4 @@
-package edu.nyu.cs.st2851.assignment7;
+package word.analysis;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;

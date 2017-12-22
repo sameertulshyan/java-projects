@@ -1,4 +1,4 @@
-package edu.nyu.cs.st2851.assignment7;
+package word.analysis;
 /**
  * This class encapsulates basic attributes shared by all ordered things
  * @author sameertulshyan

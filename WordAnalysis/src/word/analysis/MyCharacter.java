@@ -1,4 +1,4 @@
-package edu.nyu.cs.st2851.assignment7;
+package word.analysis;
 /**
  * This class represents a single character
  * @author sameertulshyan
