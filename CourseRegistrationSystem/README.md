@@ -18,4 +18,4 @@ I have provided a list of courses for the initial run in a .csv file.
 
 4.	For students, enter your name when the program prompts you
 5.	Choose from menu options to use desired functions
-6.	Exit the menu when finished by choosing the appropriate exit option. When the last menu is exited, the program will terminate
+6.	Exit the menu when finished by choosing the appropriate exit option. When the last menu is exited, the program will terminate. Note that if the program is terminated without using the exit option, the state will not be updated, i.e. all changes from the current session will not be saved.
