@@ -11,8 +11,10 @@ I have provided a list of courses for the initial run in a .csv file.
 1.	Ensure the MyUniversityCourses.csv file is placed in the src folder
 2.	Run the Program.java file (contains main method)
 3.	Enter the username and password as one of the following:
-..*	“Admin” and “Admin001”
-..*	“Student” and “Student001” (Note that all Students will use this username and password. They will be remembered/differentiated by their first name and last name)
+
+...*	“Admin” and “Admin001”
+...*	“Student” and “Student001” (Note that all Students will use this username and password. They will be remembered/differentiated by their first name and last name)
+
 4.	For students, enter your name when the program prompts you
 5.	Choose from menu options to use desired functions
 6.	Exit the menu when finished by choosing the appropriate exit option. When the last menu is exited, the program will terminate
