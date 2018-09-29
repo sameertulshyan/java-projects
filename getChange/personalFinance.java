@@ -18,6 +18,44 @@ public class Main {
   }
   
   /**
+   * Parse the input, compute the necessary trades and output to the user 
+   */
+  public static void getFinalTrades(String input) {
+    String[] portfolio = new String[4]; //initialize arrays for input processing
+    String[] benchmark = new String[4];
+    
+    try {
+      String[] firstSplit = input.split(":"); //split the input into portfolio and benchmark
+      portfolio = firstSplit[0].split("\\|"); //split the result again by asset using regex and store in array
+      benchmark = firstSplit[1].split("\\|");
+    } catch (Exception e) {
+      System.out.println("INVALID INPUT FORMAT ERROR"); //inform the user that the input is not correctly formatted
+    }
+    
+    //Sort the arrays to obtain aplhabetically ordered assets
+    Arrays.sort(portfolio);
+    Arrays.sort(benchmark);
+    
+    //iterate over assets
+    for (int i = 0; i < portfolio.length; i++) {
+      String[] portfolioAsset = portfolio[i].split(","); //split each asset by its components
+      String[] benchmarkAsset = benchmark[i].split(",");
+      
+      //determine the difference in shares between benchmark and portfolio
+      int sharesDifference = Integer.parseInt(benchmarkAsset[2]) - Integer.parseInt(portfolioAsset[2]);
+      
+      //determine the actions to take based on the difference
+      if (sharesDifference == 0) { //amount is the same, no trades necessary for this asset
+        continue;
+      } else if (sharesDifference > 0) { //need to buy more of this asset
+        System.out.println("BUY," + portfolioAsset[0] + "," + sharesDifference);
+      } else { //need to sell more of this assrt
+        System.out.println("SELL," + portfolioAsset[0] + "," + Math.abs(sharesDifference));
+      }
+    } 
+  }
+  
+  /**
    * Determine the change to be given and return it as a String
    */
   public static String getChange(String input) {
@@ -134,43 +172,5 @@ public class Main {
     
     String output = String.format("$%.2f~$%d", monthlyPayment, totalInterestPayment); //format the output as specified in the problem statement
     return output; //return the formatted output
-  }
-
-  /**
-   * Parse the input, compute the necessary trades and output to the user 
-   */
-  public static void getFinalTrades(String input) {
-    String[] portfolio = new String[4]; //initialize arrays for input processing
-    String[] benchmark = new String[4];
-    
-    try {
-      String[] firstSplit = input.split(":"); //split the input into portfolio and benchmark
-      portfolio = firstSplit[0].split("\\|"); //split the result again by asset using regex and store in array
-      benchmark = firstSplit[1].split("\\|");
-    } catch (Exception e) {
-      System.out.println("INVALID INPUT FORMAT ERROR"); //inform the user that the input is not correctly formatted
-    }
-    
-    //Sort the arrays to obtain aplhabetically ordered assets
-    Arrays.sort(portfolio);
-    Arrays.sort(benchmark);
-    
-    //iterate over assets
-    for (int i = 0; i < portfolio.length; i++) {
-      String[] portfolioAsset = portfolio[i].split(","); //split each asset by its components
-      String[] benchmarkAsset = benchmark[i].split(",");
-      
-      //determine the difference in shares between benchmark and portfolio
-      int sharesDifference = Integer.parseInt(benchmarkAsset[2]) - Integer.parseInt(portfolioAsset[2]);
-      
-      //determine the actions to take based on the difference
-      if (sharesDifference == 0) { //amount is the same, no trades necessary for this asset
-        continue;
-      } else if (sharesDifference > 0) { //need to buy more of this asset
-        System.out.println("BUY," + portfolioAsset[0] + "," + sharesDifference);
-      } else { //need to sell more of this assrt
-        System.out.println("SELL," + portfolioAsset[0] + "," + Math.abs(sharesDifference));
-      }
-    } 
   }
 }
