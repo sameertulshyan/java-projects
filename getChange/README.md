@@ -1,1 +1,5 @@
-One of my early Java programs designed to compute the best way to give a person change based on the price of purchase and the amount paid.
+# A program containing a collection of functions related to finance
+
+- A function to compute the change to give a customer
+- A function to determine the trades needed to get from a portfolio to a benchmark
+- A function to determine monthly payments on a loan based on interest, tenure and down payment
