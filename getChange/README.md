@@ -1,4 +1,4 @@
-# A program containing a collection of functions related to finance
+# Personal Finance
 
 - A function to compute the change to give a customer
 - A function to determine the trades needed to get from a portfolio to a benchmark
